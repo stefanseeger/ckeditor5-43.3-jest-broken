@@ -1,0 +1,29 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+
+        "target": "ES2022", //https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+        "importHelpers": true,
+        "lib": ["ES2022", "dom"],
+        "module": "ESNext",
+        "useDefineForClassFields": true,
+        "esModuleInterop": true,
+        "allowJs": true,
+
+        /* Bundler */
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "skipLibCheck": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+
+        /* Linting */
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "exclude": ["node_modules"],
+}

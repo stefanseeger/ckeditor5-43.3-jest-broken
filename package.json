@@ -1,0 +1,35 @@
+{
+    "name": "ckeditor5-custom-project",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "jest --config ./jest.config.ts"
+    },
+    "resolutions": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "cheerio": "1.0.0-rc.3"
+    },
+    "devDependencies": {
+        "@ckeditor/ckeditor5-react": "^8.0.0",
+        "@swc/core": "^1.5.0",
+        "@swc/jest": "^0.2.36",
+        "@types/enzyme": "^3.10.18",
+        "@types/jest": "^29.5.14",
+        "@types/react": "^18.3.12",
+        "cheerio": "^1.0.0-rc.3",
+        "ckeditor5": "43.3.0",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.7",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jest-junit": "^16.0.0",
+        "jest-silent-reporter": "^0.6.0",
+        "jest-sonar-reporter": "^2.0.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "sinon": "^19.0.2",
+        "ts-jest": "^29.1.4",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.2"
+    }
+}
