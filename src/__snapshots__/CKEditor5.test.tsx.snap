@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CKEditor5 HTML content renders correctly the HTML content 1`] = `
+<CKEditor
+  config={
+    {
+      "comments": {
+        "editorConfig": {},
+      },
+      "initialData": "Data data",
+      "licenseKey": "GPL",
+      "placeholder": "Type or paste your content here!",
+      "plugins": [
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+      ],
+      "toolbar": {
+        "items": [
+          "bold",
+        ],
+        "shouldNotGroupWhenFull": false,
+      },
+    }
+  }
+  editor={[Function]}
+  onChange={[MockFunction]}
+  onError={[Function]}
+  onReady={[Function]}
+>
+  <div />
+</CKEditor>
+`;

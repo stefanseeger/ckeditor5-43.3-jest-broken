@@ -11,8 +11,8 @@ console.error = function (message) {
   if (
     typeof message === 'string' &&
     (message.includes('Invalid aria prop') ||
-      !message.includes('deprecated') ||
-      !message.includes(
+      message.includes('deprecated') ||
+      message.includes(
         'If you intentionally want it to appear in the DOM as a custom attribute'
       ))
   ) {
