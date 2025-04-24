@@ -31,8 +31,9 @@ describe('CKEditor5', () => {
       const onChange = jest.fn();
       const isReady = new Promise((resolve, reject) => {
         const onReady = (_editor: DecoupledEditor) => {
-          if(Array.from(_editor["_readOnlyLocks"]).length) {
-            console.error({_readOnlyLocks: Array.from(_editor["_readOnlyLocks"])})
+          const _readOnlyLocks = Array.from(_editor["_readOnlyLocks"])
+          if(_readOnlyLocks.length) {
+            reject(new Error(`CKEditor should not be locked\n ${JSON.stringify(_readOnlyLocks)}`))
           }
           resolve(true);
         };
