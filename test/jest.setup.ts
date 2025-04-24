@@ -12,6 +12,7 @@
 
  import enzyme from "enzyme";
  import Adapter from "enzyme-adapter-react-16";
+ import { TextEncoder } from "util";
  
  global.navigator = {
      userAgent: "node.js",
@@ -22,6 +23,25 @@
  global.window["HTMLCanvasElement"] = function HTMLCanvasElement() {} as any;
  (window as any).USE_STATIC_TEST_ID = true;
  // Single test should fail when the test throw console.error
+ const { error } = console;
+ // eslint-disable-next-line no-console
+ console.error = function (message, ...args) {
+     if (typeof message?.message === "string") {
+         // Destructure Error messages
+         ({ message } = message);
+     }
+     if (
+         typeof message === "string" &&
+         (message.includes("Invalid aria prop") ||
+             message.includes("deprecated") ||
+             message.includes("If you intentionally want it to appear in the DOM as a custom attribute") ||
+             message.includes("Object.dispatchError") ||
+             message.includes("Warning: `value` should be array when `mode` is `multiple` or `tags`"))
+     ) {
+         return;
+     }
+     error.apply(console, [message, ...args]); // keep default behaviour for other errors
+ };
  
  global.matchMedia =
      global.matchMedia ||
@@ -48,4 +68,5 @@
  window.scrollTo = jest.fn();
  // Fix randomUUID for jest
  global.crypto.randomUUID = randomUUID;
+ global.TextEncoder = TextEncoder;
  
