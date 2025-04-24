@@ -33,6 +33,7 @@ describe('CKEditor5', () => {
         const onReady = (_editor: DecoupledEditor) => {
           const _readOnlyLocks = Array.from(_editor["_readOnlyLocks"])
           if(_readOnlyLocks.length) {
+            console.log(location.href)
             reject(new Error(`CKEditor should not be locked\n ${JSON.stringify(_readOnlyLocks)}`))
           }
           resolve(true);
